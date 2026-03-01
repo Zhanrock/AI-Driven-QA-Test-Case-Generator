@@ -1,0 +1,12 @@
+# Core (no external API needed with MockLLM)
+# No required dependencies for offline/mock mode
+
+# Optional: for PDF ingestion
+# pdfplumber>=0.10.0
+# PyPDF2>=3.0.0
+
+# Optional: for DOCX ingestion
+# python-docx>=1.1.0
+
+# Optional: for OpenAI LLM backend
+# openai>=1.0.0
