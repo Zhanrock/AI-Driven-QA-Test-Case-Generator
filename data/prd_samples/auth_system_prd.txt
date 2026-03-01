@@ -1,0 +1,59 @@
+# Product Requirements Document: User Authentication System
+
+## Overview
+This document outlines the requirements for a secure user authentication system
+for a web application. The system must support registration, login, logout,
+password reset, and two-factor authentication.
+
+---
+
+## Feature 1: User Registration
+
+Users must be able to create new accounts.
+
+Requirements:
+- The registration form must collect: email, password, and display name.
+- Email addresses must be unique across the system.
+- Password must be at least 8 characters and contain at least one uppercase letter,
+  one lowercase letter, one digit, and one special character.
+- A verification email must be sent after successful registration.
+- Users cannot log in until their email is verified.
+
+---
+
+## Feature 2: User Login
+
+Registered and verified users must be able to log in.
+
+Requirements:
+- Login requires email and password.
+- The system must validate credentials and issue a session token on success.
+- An error message ("Invalid email or password") must be shown on failure.
+- After 5 failed consecutive login attempts, the account is locked for 15 minutes.
+- Successful login redirects the user to their dashboard.
+
+---
+
+## Feature 3: Password Reset
+
+Users must be able to reset forgotten passwords.
+
+Requirements:
+- User requests a password reset by providing their registered email.
+- A time-limited reset link (valid for 1 hour) is sent to the email.
+- The reset link redirects to a form where the user can enter a new password.
+- New password must meet the same complexity requirements as registration.
+- After reset, all existing sessions for that user are invalidated.
+
+---
+
+## Feature 4: Two-Factor Authentication (2FA)
+
+Users should be able to enable optional 2FA for enhanced security.
+
+Requirements:
+- 2FA can be enabled/disabled from account settings.
+- Supported methods: TOTP (e.g., Google Authenticator) and SMS OTP.
+- When 2FA is enabled, a second factor is required after successful password entry.
+- Users must store backup codes upon 2FA setup in case their device is lost.
+- 2FA setup requires re-authentication of the current session.
